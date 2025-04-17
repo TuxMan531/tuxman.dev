@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valorant Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { font-family: sans-serif; background: #111; color: #fff; }
+        iframe { width: 100%; height: 90vh; border: none; }
+        nav a {
+            color: white !important;
+        }
+      </style>
+</head>
+<header>
+    <h1>TuxMan Website</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="https://www.youtube.com/@TuxMan">Youtube</a></li>
+            <li><a href="https://github.com/TuxMan531">Projects</a></li>
+        </ul>
+    </nav>
+    <hr class="divider">
+<body>
+  <h1>Recent Valorant Matches</h1>
+  <span id="playtime">Fetching Playtime</span>
+  <script>   
+   fetch('/playtime')
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById('playtime').textContent = 'Playtime:' + data.playtime;
+    })
+    .catch(() => {
+      document.getElementById('playtime').textContent = 'Playtime: Unavailable';
+    });
+    </script>
+  <iframe src="https://tracker.gg/valorant/profile/riot/TuxMan%230424/overview?platform=pc&playlist=competitive"></iframe>
+</body>
+</html>

@@ -1,0 +1,27 @@
+html {
+    font-family: Arial, sans-serif;
+}
+
+nav ul {
+    list-style-type: none; /* remove bullet points */
+    padding: 0; /* remove default padding */
+    margin: 0; /* remove default margin */
+    display: flex; /* make it a row */
+    justify-content: space-around; /*space out links evenly */
+}
+
+nav ul li a {
+    text-decoration: none; 
+    color: #000;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #007BFF;
+}
+
+.divider {
+    border-left: 1px solid #ccc; /* Vertical line */
+    height: 4px;
+    background-color: #000000; /* Color of the line */
+}
