@@ -8,6 +8,9 @@ const port = 8080;
 app.use(express.static('public')); // serve files from the public directory
 
 // experiment area
+app.get('/circlegame.js', (req, res) => {
+  res.sendFile(path.join(__dirname, 'circlegame.js'));
+});
 
 //
 
