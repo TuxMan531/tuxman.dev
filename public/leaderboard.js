@@ -34,7 +34,7 @@
       await fetch('/scores', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, score: RealScore.toFixed(3) })
+        body: `{"name": "${name}", "score": ${RealScore.toFixed(3)}}`
       });
       fetchScores();
     } catch (err) {
