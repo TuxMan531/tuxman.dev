@@ -16,6 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function startTimer() {
         startTime = Date.now();
+        timerInterval = setInterval(() => {
+          elapsed = (Date.now() - startTime) / 1000;
+      }, 100);
       }
 
     function createCircle() {
