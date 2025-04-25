@@ -21,6 +21,7 @@ app.get('/scores', (req, res) => {
 
 app.post('/scores', (req, res) => {
   const { name, score } = req.body;
+  if (typeof score !== 'number' || score > 20 || score <= 0 || typeof name !== 'string' || name.length > 5 || name.length === 0) { res.satus(400).send('I love spud'); return; }
   fs.readFile(scoresFile, 'utf8', (err, data) => {
     let scores = [];
     if (!err) {
