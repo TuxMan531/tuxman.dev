@@ -27,10 +27,27 @@
     <p> click the circles</p>
     <p> <span id="score">Score: 0</span></p>
     </center>   
+    <div id="full-game">
     <div id="circle-game-container">
+        <div id="leaderboard">
+            <h2>Leaderboard</h2>
+            <table id="leaderboard-table">
+                <button onclick="checkScore()"> Add score </button>                
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboard-body">
+                    <!-- Leaderboard entries  -->
+                </tbody>
+            </table>
+        </div>
         <div id="circle"> </div>
     </div>
-    
+</div>
+    <script src="leaderboard.js"></script>
 </main>
 </body>
 </html>
