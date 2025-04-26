@@ -30,7 +30,8 @@ function createCircle() {
   circle.style.top = `${randomY}px`;
 
   //add.addEventListener("click", numberOfCircles++);
-  circle.addEventListener("click", () => {
+  circle.addEventListener("click", (e) => {
+    if (!e.isTrusted) return;
     container.removeChild(circle);
     const newCircle = createCircle();
     container.appendChild(newCircle);
