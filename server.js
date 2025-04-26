@@ -21,11 +21,20 @@ app.get('/scores', (req, res) => {
 
 app.post('/scores', (req, res) => {
   const { name, score } = req.body;
-  if (typeof score !== 'number' || score > 20 || score <= 0 || typeof name !== 'string' || name.length > 5 || name.length === 0) { res.status(400).send('I love spud'); return; }
+  if (typeof
+    score !== 'number' ||
+    score > 20 ||
+    score <= 0 ||
+    typeof name !== 'string' ||
+    name.length > 5 ||
+    name.length === 0 ||
+    name.includes('<') ||
+    name.includes('>') ||
+    name.includes('!')) { res.status(400).send('I love spud'); return; }
   fs.readFile(scoresFile, 'utf8', (err, data) => {
     let scores = [];
     if (!err) {
-      try { scores = JSON.parse(data) } catch {}
+      try { scores = JSON.parse(data) } catch { }
     }
     scores.push({ name, score });
     fs.writeFile(scoresFile, JSON.stringify(scores, null, 2), err => {
