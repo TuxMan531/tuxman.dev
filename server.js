@@ -15,8 +15,12 @@ const scoresFile = path.join(__dirname, 'scores.json');
 app.get('/scores', (req, res) => {
   fs.readFile(scoresFile, 'utf8', (err, data) => {
     if (err) return res.json([]);
+    try { 
     res.json(JSON.parse(data));
-  });
+  } catch (err) {
+    console.error('Error parsing scores:');
+    res.json([]);
+  }});
 });
 
 app.post('/scores', (req, res) => {
